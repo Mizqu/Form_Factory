@@ -1684,6 +1684,22 @@
             "rid": "win"
           }
         }
+      },
+      "App/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.4",
+          "Microsoft.EntityFrameworkCore": "8.0.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.4",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/App.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.dll": {}
+        }
       }
     }
   },
@@ -4728,10 +4744,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "App/1.0.0": {
+      "type": "project",
+      "path": "../App/App.csproj",
+      "msbuildProject": "../App/App.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "App >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.4",
       "Microsoft.EntityFrameworkCore >= 8.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.4",
@@ -4767,7 +4789,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\REPOS\\Form_Factory\\App\\App.csproj": {
+              "projectPath": "C:\\REPOS\\Form_Factory\\App\\App.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
