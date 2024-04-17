@@ -8,6 +8,7 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <link rel="stylesheet" href="../assets/css/NavbarStyleSheet.css">
+<link rel="stylesheet" href="../assets/css/TrainerModalSheet.css">
 
 <main class="main">
   <header>
@@ -31,7 +32,7 @@
       <nav class="nav">
         <ul>
           <li class="active"><a href="#">Home</a></li>
-          <li class="active"><a href="#" id="modalTrigger">Find a trainer</a></li>
+          <li class="active"><a href="#" (click)="openModal()">Find a trainer</a></li>
           <li class="active"><a href="#">TO DO</a></li>
           <li class="active"><a href="#">Who we are</a></li>
         </ul>
@@ -68,13 +69,6 @@
   </div>
 </main>
 
-<script>
-    var modalTrigger = document.getElementById('modalTrigger');
-    modalTrigger.addEventListener('click', function () {
-        var myModal = new bootstrap.Modal(document.getElementById('FindTrainerModal'));
-        myModal.show();
-    });
-</script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var TrainerModal = document.getElementById('FindTrainerModal');
