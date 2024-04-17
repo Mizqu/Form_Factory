@@ -1,0 +1,97 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<link rel="stylesheet" href="../assets/css/NavbarStyleSheet.css">
+
+<main class="main">
+  <header>
+    <nav class="navbar purple-navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+          <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item" style="margin-left: auto;">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main role="main" class="pb-3">
+    <aside class="sidebar">
+      <nav class="nav">
+        <ul>
+          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="#" id="modalTrigger">Find a trainer</a></li>
+          <li class="active"><a href="#">TO DO</a></li>
+          <li class="active"><a href="#">Who we are</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </main>
+
+  <div class="modal fade" id="FindTrainerModal" tabindex="-1" aria-labelledby="FindTrainerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form method="post">
+        <div class="modal-content Card">
+          <div class="CardInner">
+            <label>Find a trainer</label>
+            <div class="container">
+              <div class="InputContainer">
+                <input id="Trainer_Name" name="Trainer_Name" placeholder="First Name and Last Name" />
+              </div>
+              <div class="InputContainer">
+                <input id="City" name="City" placeholder="City" />
+              </div>
+              <div class="InputContainer">
+                <input id="Field" name="Field" placeholder="Discipline" />
+              </div>
+              <button>
+                <div class="Icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script>
+    var modalTrigger = document.getElementById('modalTrigger');
+    modalTrigger.addEventListener('click', function () {
+        var myModal = new bootstrap.Modal(document.getElementById('FindTrainerModal'));
+        myModal.show();
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var TrainerModal = document.getElementById('FindTrainerModal');
+        TrainerModal.addEventListener('hidden.bs.modal', function () {
+            document.getElementById('Trainer_Name').value = '';
+            document.getElementById('City').value = '';
+            document.getElementById('Field').value = '';
+        });
+    });
+</script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />

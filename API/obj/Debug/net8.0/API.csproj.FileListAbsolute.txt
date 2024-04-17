@@ -144,3 +144,6 @@ C:\REPOS\Form_Factory\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\REPOS\Form_Factory\API\obj\Debug\net8.0\ref\API.dll
 C:\REPOS\Form_Factory\API\bin\Debug\net8.0\App.dll
 C:\REPOS\Form_Factory\API\bin\Debug\net8.0\App.pdb
+C:\REPOS\Form_Factory\API\bin\Debug\net8.0\Scrutor.dll
+C:\REPOS\Form_Factory\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+C:\REPOS\Form_Factory\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
