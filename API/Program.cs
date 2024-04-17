@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AngularAppConnection",
+    options.AddPolicy("FrontendClient",
         builder => builder.WithOrigins("http://localhost:4200")
         .AllowAnyHeader()
         .AllowAnyMethod());
@@ -41,7 +41,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AngularAppConnection");
+app.UseCors("FrontendClient");
 
 app.MapIdentityApi<CustomUser>();    
 

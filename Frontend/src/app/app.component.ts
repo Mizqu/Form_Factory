@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import * as bootstrap from 'bootstrap';
+import { ApiService } from './Services/TrainersAPIService'; 
+import { Discipline } from './Models/Discipline';
+import { DisciplinesAPIService } from './Services/DisciplinesAPIService'; 
 
 @Component({
   selector: 'app-root',
@@ -10,10 +13,27 @@ export class AppComponent implements OnInit {
 
   title = 'Frontend';
   private TrainerModal: bootstrap.Modal | undefined;
+  disciplines: Discipline[] = [];
 
-  constructor() { }
+  request: any = {
+    firstName: '',
+    lastName: '',
+    city: '',
+    disciplineId: ''
+  };
+
+  constructor(private apiService: ApiService, private DisciplinesApiService: DisciplinesAPIService) { }
 
   ngOnInit(): void {
+    this.DisciplinesApiService.sendGetRequest().subscribe(
+      (response: any) => {
+        console.log(response);
+        this.disciplines = response; 
+      },
+       error => {
+        console.error('Error while fetching disciplines:', error);
+      }
+    )
     const modalElement = document.getElementById('FindTrainerModal');
     if (modalElement) {
       this.TrainerModal = new bootstrap.Modal(modalElement);
@@ -24,8 +44,8 @@ export class AppComponent implements OnInit {
   }
 
   openModal(): void {
-    if (this.TrainerModal ) {
-      this.TrainerModal.show();
+    if (this.TrainerModal) {
+      this.TrainerModal.show();    
     }
   }
 
@@ -38,6 +58,16 @@ export class AppComponent implements OnInit {
       CityInput.value = '';
       FieldInput.value = '';
     }
+  }
+  onSubmit(): void {
+    this.apiService.sendRequest(this.request).subscribe(
+      response => {
+        console.log(response)
+      },
+      error => {
+
+      }
+    );
   }
 }
 

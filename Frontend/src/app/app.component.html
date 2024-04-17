@@ -1,11 +1,4 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
 
 <link rel="stylesheet" href="../assets/css/NavbarStyleSheet.css">
 <link rel="stylesheet" href="../assets/css/TrainerModalSheet.css">
@@ -42,21 +35,24 @@
 
   <div class="modal fade" id="FindTrainerModal" tabindex="-1" aria-labelledby="FindTrainerModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <form method="post">
+      <form (submit)="onSubmit()">
         <div class="modal-content Card">
           <div class="CardInner">
             <label>Find a trainer</label>
             <div class="container">
               <div class="InputContainer">
-                <input id="Trainer_Name" name="Trainer_Name" placeholder="First Name and Last Name" />
+                <input type="text" [(ngModel)]="request.firstName" id="Trainer_Name" name="Trainer_Name" placeholder="First Name and Last Name" />
               </div>
               <div class="InputContainer">
-                <input id="City" name="City" placeholder="City" />
+                <input type="text" [(ngModel)]="request.city" id="City" name="City" placeholder="City" />
               </div>
               <div class="InputContainer">
-                <input id="Field" name="Field" placeholder="Discipline" />
+                <select [(ngModel)]="request.disciplineId" id="Field" name="Field">
+                  <option value="" disabled selected>Select a discipline</option>
+                  <option *ngFor="let discipline of disciplines" [value]="discipline.id">{{ discipline.name }}</option>
+                </select>
               </div>
-              <button>
+              <button type="submit">
                 <div class="Icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
                 </div>
@@ -69,23 +65,5 @@
   </div>
 </main>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var TrainerModal = document.getElementById('FindTrainerModal');
-        TrainerModal.addEventListener('hidden.bs.modal', function () {
-            document.getElementById('Trainer_Name').value = '';
-            document.getElementById('City').value = '';
-            document.getElementById('Field').value = '';
-        });
-    });
-</script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
-<router-outlet />
+<router-outlet></router-outlet>
