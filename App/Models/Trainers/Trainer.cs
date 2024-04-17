@@ -20,11 +20,6 @@ namespace App.Models.Trainers
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public bool isRemoteAllowed { get; set; }
-
-        [NotMapped]
-        public List<int> DisciplinesSerialized { get; set; }
-
-        [Column("DisciplinesIds")]
         public string DisciplinesIds { get; set; }
 
         public float Rate { get; set; } = 0;
