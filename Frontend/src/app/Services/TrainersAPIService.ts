@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Trainer } from '../Models/Trainer';
+import { TrainersResponse } from '../Models/trainers-response.interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,9 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getTrainers(request: any): Observable<Trainer[]> {
-    return this.http.get<Trainer[]>(`${this.apiUrl}?DisciplineId=${request.DisciplineId}&City=${request.City}&FirstName=${request.FirstName}&LastName=${request.LastName}`);
+  sendRequest(request: any): Observable<TrainersResponse> {
+    return this.http.get<any>(this.apiUrl + { params: request });
   }
 
-  createTrainer(request: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}`, request);
-
   }
-}
+

@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "API.Controllers.DisciplinesController",
+    "Method": "GetDisciplines",
+    "RelativePath": "api/disciplines",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API.Controllers.TrainersController",
     "Method": "GetSpecifiedTrainers",
     "RelativePath": "api/trainers",
