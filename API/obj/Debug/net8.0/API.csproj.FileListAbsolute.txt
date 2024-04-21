@@ -136,7 +136,6 @@ C:\REPOS\Form_Factory\API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTar
 C:\REPOS\Form_Factory\API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.API.props
 C:\REPOS\Form_Factory\API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\REPOS\Form_Factory\API\obj\Debug\net8.0\scopedcss\bundle\API.styles.css
-C:\REPOS\Form_Factory\API\obj\Debug\net8.0\API.csproj.Up2Date
 C:\REPOS\Form_Factory\API\obj\Debug\net8.0\API.dll
 C:\REPOS\Form_Factory\API\obj\Debug\net8.0\refint\API.dll
 C:\REPOS\Form_Factory\API\obj\Debug\net8.0\API.pdb
@@ -147,3 +146,4 @@ C:\REPOS\Form_Factory\API\bin\Debug\net8.0\App.pdb
 C:\REPOS\Form_Factory\API\bin\Debug\net8.0\Scrutor.dll
 C:\REPOS\Form_Factory\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 C:\REPOS\Form_Factory\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\REPOS\Form_Factory\API\obj\Debug\net8.0\API.csproj.CopyComplete

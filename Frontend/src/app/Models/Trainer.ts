@@ -1,5 +1,5 @@
 export interface Trainer {
-  UserId: string;
+  UserId: number;
   FirstName: string;
   LastName: string;
   CityOfWork: string;

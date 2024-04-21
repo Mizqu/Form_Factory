@@ -14,7 +14,9 @@
         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
           <ul class="navbar-nav flex-grow-1">
             <li class="nav-item" style="margin-left: auto;">
-            </li>
+              <a class="btn btn-sm btn-primary" href="#">Log in</a>
+              <a class="btn btn-sm btn-success" style="color: white;" href="#">Sign up</a>
+            </li>           
           </ul>
         </div>
       </div>
@@ -31,7 +33,13 @@
         </ul>
       </nav>
     </aside>
+    <router-outlet>
+    </router-outlet>
   </main>
+  <div>
+    <ng-container #dynamicComponentContainer></ng-container>
+    <app-display-trainers></app-display-trainers>
+  </div>
 
   <div class="modal fade" id="FindTrainerModal" tabindex="-1" aria-labelledby="FindTrainerModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -41,13 +49,13 @@
             <label>Find a trainer</label>
             <div class="container">
               <div class="InputContainer">
-                <input type="text" [(ngModel)]="request.firstName" id="Trainer_Name" name="Trainer_Name" placeholder="First Name and Last Name" />
+                <input type="text" [(ngModel)]="FirstName" id="Trainer_Name" name="Trainer_Name" placeholder="First Name and Last Name" />
               </div>
               <div class="InputContainer">
-                <input type="text" [(ngModel)]="request.city" id="City" name="City" placeholder="City" />
+                <input type="text" [(ngModel)]="City" id="City" name="City" placeholder="City" />
               </div>
               <div class="InputContainer">
-                <select [(ngModel)]="request.disciplineId" id="Field" name="Field">
+                <select [(ngModel)]="disciplineId" id="Field" name="Field">
                   <option value="" disabled selected>Select a discipline</option>
                   <option *ngFor="let discipline of disciplines" [value]="discipline.id">{{ discipline.name }}</option>
                 </select>
@@ -66,4 +74,4 @@
 </main>
 
 
-<router-outlet></router-outlet>
+

@@ -1,8 +1,12 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import * as bootstrap from 'bootstrap';
 import { ApiService } from './Services/TrainersAPIService'; 
 import { Discipline } from './Models/Discipline';
-import { DisciplinesAPIService } from './Services/DisciplinesAPIService'; 
+import { DisciplinesAPIService } from './Services/DisciplinesAPIService';
+import { TrainersDataService } from './Services/TrainersDataService';
+import { DisplayTrainersComponent } from './Components/TrainersDisplay/display-trainers/display-trainers.component';
+import { UsersService } from './Services/UsersService'; 
+ 
 
 @Component({
   selector: 'app-root',
@@ -15,14 +19,15 @@ export class AppComponent implements OnInit {
   private TrainerModal: bootstrap.Modal | undefined;
   disciplines: Discipline[] = [];
 
-  request: any = {
-    firstName: '',
-    lastName: '',
-    city: '',
-    disciplineId: ''
-  };
+  FirstName: string = '';
+  LastName: string = '';
+  City: string = '';
+  disciplineId: string = '';
 
-  constructor(private apiService: ApiService, private DisciplinesApiService: DisciplinesAPIService) { }
+
+  componentRef: any; 
+  constructor(private apiService: ApiService, private DisciplinesApiService: DisciplinesAPIService,
+    private TrainersDataService: TrainersDataService, private ViewContainerRef: ViewContainerRef, private UsersService : UsersService) { }
 
   ngOnInit(): void {
     this.DisciplinesApiService.sendGetRequest().subscribe(
@@ -59,15 +64,38 @@ export class AppComponent implements OnInit {
       FieldInput.value = '';
     }
   }
+
+  public addComponent(): void {
+    if (this.componentRef) {
+      this.componentRef.destroy(); 
+    }
+    this.componentRef = this.ViewContainerRef.createComponent(DisplayTrainersComponent);
+  }
+
+
   onSubmit(): void {
-    this.apiService.sendRequest(this.request).subscribe(
+    this.apiService.SendGetRequest(this.FirstName, this.LastName, this.City, this.disciplineId).subscribe(
       response => {
-        console.log(response)
+        this.TrainersDataService.sendTrainersData(response);
+        this.addComponent();
       },
       error => {
+        console.log(error)
+      }
+    );
+  }
+  registerUser(): void {
+    email = this.UsersService.email;
 
+    this.UsersService.Register(email, password).subscribe(
+      response => {
+        console.log('Registration successful:', response);
+      },
+      error => {
+        console.error('Registration failed:', error);
       }
     );
   }
 }
+
 

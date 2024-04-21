@@ -1,0 +1,53 @@
+<body>
+  <div>
+
+    <div class="container mt-5">
+      <div *ngFor="let trainer of trainers">
+        <div class="row d-flex justify-content-center">
+
+          <div class="col-md-7">
+
+            <div class="card p-3 py-4">
+
+              <div>
+                <img src="https://i.imgur.com/bDLhJiP.jpg" width="150" class="rounded-circle">
+              </div>
+
+              <div class="text-center mt-3">
+                <span class="bg-secondary p-1 px-4 rounded text-white rate">{{trainer.Rate}}</span>
+                <h5 class="mt-2 mb-0">
+                  {{trainer.FirstName}}
+                  <span>{{trainer.LastName}}</span>
+                </h5>
+                <div class="specializations">
+                  <ul class="no-bullets">
+                    <li><span>{{trainer.disciplineIds}}</span></li>
+                  </ul>
+                </div>
+
+
+                <div class="px-4 mt-1">
+                  <p class="fonts">{{trainer.Bio}} </p>
+                </div>
+                <div class="buttons">
+
+                  <button class="btn btn-outline-primary px-4">Message</button>
+                  <button class="btn btn-primary px-4 ms-3">Contact</button>
+                </div>
+
+
+              </div>
+
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
