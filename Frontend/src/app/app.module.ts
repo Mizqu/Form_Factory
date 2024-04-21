@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DisplayTrainersComponent } from './Components/TrainersDisplay/display-trainers/display-trainers.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DisplayTrainersComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,8 @@ namespace API.Controllers
         public DisciplinesController(ApplicationDbContext context)
         {
             _context = context;
-        }
+        }       
+
         [HttpGet]
 
         public ActionResult GetDisciplines()

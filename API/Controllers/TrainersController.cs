@@ -43,9 +43,7 @@ namespace API.Controllers
         [HttpPost]
 
         public ActionResult CreateTrainer([FromBody] CreateTrainersRequest request)
-        {
-            
-
+        {           
             var trainer = new Trainer
             {
                 UserId = "6",
