@@ -5,7 +5,8 @@ import { Discipline } from './Models/Discipline';
 import { DisciplinesAPIService } from './Services/DisciplinesAPIService';
 import { TrainersDataService } from './Services/TrainersDataService';
 import { DisplayTrainersComponent } from './Components/TrainersDisplay/display-trainers/display-trainers.component';
-import { UsersService } from './Services/UsersService'; 
+import { RegisterRequest } from './Models/RegisterRequest';
+import { RegistrationComponent } from './Components/registration/registration.component';
  
 
 @Component({
@@ -23,11 +24,12 @@ export class AppComponent implements OnInit {
   LastName: string = '';
   City: string = '';
   disciplineId: string = '';
-
+  registerRequest: RegisterRequest = new RegisterRequest();
+  showRegistrationComponent: boolean = false;
 
   componentRef: any; 
   constructor(private apiService: ApiService, private DisciplinesApiService: DisciplinesAPIService,
-    private TrainersDataService: TrainersDataService, private ViewContainerRef: ViewContainerRef, private UsersService : UsersService) { }
+    private TrainersDataService: TrainersDataService, private ViewContainerRef: ViewContainerRef) { }
 
   ngOnInit(): void {
     this.DisciplinesApiService.sendGetRequest().subscribe(
@@ -65,7 +67,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  public addComponent(): void {
+  public addDisplayTrainersComponent(): void {
     if (this.componentRef) {
       this.componentRef.destroy(); 
     }
@@ -77,24 +79,20 @@ export class AppComponent implements OnInit {
     this.apiService.SendGetRequest(this.FirstName, this.LastName, this.City, this.disciplineId).subscribe(
       response => {
         this.TrainersDataService.sendTrainersData(response);
-        this.addComponent();
+        this.addDisplayTrainersComponent();
       },
       error => {
         console.log(error)
       }
     );
   }
-  registerUser(): void {
-    email = this.UsersService.email;
-
-    this.UsersService.Register(email, password).subscribe(
-      response => {
-        console.log('Registration successful:', response);
-      },
-      error => {
-        console.error('Registration failed:', error);
-      }
-    );
+  public addRegistrationComponent(): void
+  {
+    if (this.componentRef) {
+      this.componentRef.destroy();
+    }
+    this.showRegistrationComponent = true;
+    this.componentRef = this.ViewContainerRef.createComponent(RegistrationComponent);
   }
 }
 
