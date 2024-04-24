@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\REPOS\\Form_Factory\\App\\App.csproj",
         "projectName": "App",
         "projectPath": "C:\\REPOS\\Form_Factory\\App\\App.csproj",
-        "packagesPath": "C:\\Users\\Jurek\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Mizqu\\.nuget\\packages\\",
         "outputPath": "C:\\REPOS\\Form_Factory\\App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jurek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mizqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -85,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

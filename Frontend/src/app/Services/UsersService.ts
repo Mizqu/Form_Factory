@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { RegisterRequest } from '../Models/RegisterRequest';
 
 
 
@@ -12,13 +13,10 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  Register(email : string, password : string): Observable<any>{
+  Register(registerRequest : RegisterRequest): Observable<any>{
+  
 
-    const params = new HttpParams()
-      .set('email', email)
-      .set('password', password);
-
-    return this.http.get<any>(this.baseApiUrl + 'register', { params });
+    return this.http.get<any>(this.baseApiUrl + 'register' + registerRequest);
   }
 }
 
