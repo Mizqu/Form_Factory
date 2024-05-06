@@ -15,7 +15,7 @@ export class RegistrationComponent {
   registerUser(): void {
     this.UsersService.Register(this.registerRequest).subscribe(
       response => {
-        console.log('Registration successful:', response);
+        console.log('Registration successful:');
       },
       error => {
         console.error('Registration failed:', error);

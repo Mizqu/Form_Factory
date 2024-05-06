@@ -46,7 +46,7 @@ namespace API.Controllers
         {           
             var trainer = new Trainer
             {
-                UserId = "6",
+                UserId = "x", // admin is expected to choose the user
                 CityOfWork = request.City,
                 FirstName = request.FirstName,
                 LastName = request.LastName,

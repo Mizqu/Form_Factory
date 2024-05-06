@@ -147,3 +147,4 @@ C:\REPOS\Form_Factory\API\bin\Debug\net8.0\Scrutor.dll
 C:\REPOS\Form_Factory\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 C:\REPOS\Form_Factory\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
 C:\REPOS\Form_Factory\API\obj\Debug\net8.0\API.csproj.Up2Date
+C:\REPOS\Form_Factory\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
