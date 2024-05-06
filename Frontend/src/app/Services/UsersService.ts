@@ -9,14 +9,14 @@ import { RegisterRequest } from '../Models/RegisterRequest';
   providedIn: 'root'
 })
 export class UsersService {
-  private baseApiUrl = 'http://localhost:5213/api';
+  private baseApiUrl = 'http://localhost:5213/';
 
   constructor(private http: HttpClient) { }
 
   Register(registerRequest : RegisterRequest): Observable<any>{
   
-
-    return this.http.get<any>(this.baseApiUrl + 'register' + registerRequest);
+    console.log(registerRequest)
+    return this.http.post<any>(this.baseApiUrl + 'register' , registerRequest);
   }
 }
 
